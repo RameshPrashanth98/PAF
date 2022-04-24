@@ -63,4 +63,35 @@ public class Bill {
 			}
 			return output;
 		}
+		
+		//Insert bill
+		public String insertBills(String UserID, String PastunitRead, String NewunitRead, String NoofUnits,String Unitprice,String Totalbill) {
+			String output = "" ;
+			try {
+				Connection con = connect();
+				if(con == null) {
+					return "Error while connecting to the database for inserting. "; 
+				}
+				String query = "insert into bills (bid,uid,	punitread,nunitread	,noofunits,unitprice,totalbill	) values(?,?,?,?,?) ";
+				PreparedStatement pst = con.prepareStatement(query);
+				
+				
+				pst.setString(1, UserID);
+				pst.setInt(2,Integer.parseInt(PastunitRead));
+				pst.setInt(3,Integer.parseInt(NewunitRead));
+				pst.setInt(4,Integer.parseInt(NoofUnits));
+				pst.setInt(5,Integer.parseInt(Unitprice));
+				pst.setDouble(6, Double.parseDouble(Totalbill));
+				
+				pst.executeUpdate();
+				con.setAutoCommit(false);
+				con.commit();
+				output = "Inserted Successfully.";
+			}catch(Exception e) {
+				output ="Error while inserting the Bill.";
+				System.err.println(e.getMessage());
+			}
+			
+			return output;
+		}
 }
