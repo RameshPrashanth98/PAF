@@ -94,4 +94,69 @@ public class Bill {
 			
 			return output;
 		}
+		
+		//update bills
+		public String updateBills(String BillID,String UserID, String PastunitRead, String NewunitRead, String NoofUnits,String Unitprice,String Totalbill) {
+			String output = "";
+			Connection con = connect();
+			
+			try {
+				
+				if(con == null) {
+					return "Error while connecting to the database for updating.";
+				}
+				
+				String query = "update funds set uid=?, punitread=?, noofunits=?, unitprice=?, totalbill=?"
+						+ " where bid=?";
+				
+				PreparedStatement pdstmt = con.prepareStatement(query);
+				
+				pdstmt.setString(1, UserID);
+				pdstmt.setInt(2,Integer.parseInt(PastunitRead));
+				pdstmt.setInt(3,Integer.parseInt(NewunitRead));
+				pdstmt.setInt(4,Integer.parseInt(NoofUnits));
+				pdstmt.setInt(5,Integer.parseInt(Unitprice));
+				pdstmt.setInt(6,Integer.parseInt(BillID));
+				pdstmt.executeUpdate();
+				con.setAutoCommit(false);
+				con.commit();
+				output = "Updated successfully.";
+				
+				
+				
+			}catch(Exception e) {
+				output = "Error while updating the Bill.";
+				System.err.print(e.getMessage());
+			}
+			
+			return output;
+		}
+		
+		//Delete bill
+		public String deleteBill(String BillID) {
+			String output = "";
+			try {
+				Connection con = connect();
+				if(con==null) {
+					return "Error while connecting to database for deleting.";
+				}
+				
+				String query = "delete from bills where id=?";
+				
+				PreparedStatement pdstmt = con.prepareStatement(query);
+				
+				pdstmt.setInt(1, Integer.parseInt(BillID));
+				
+				pdstmt.executeUpdate();
+				con.setAutoCommit(false);
+				con.commit();
+				output = "Deleted Successfully";
+				
+			}catch(Exception e) {
+				output = "Error while deleting the Bill.";
+				System.err.print(e.getMessage());
+			}
+			
+			return output;
+		}
 }
