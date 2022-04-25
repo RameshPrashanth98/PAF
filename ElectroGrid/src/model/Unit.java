@@ -144,7 +144,7 @@ public class Unit {
 
 		return output;
 	}
-/*
+
 	public String deleteUnit(String uID) {
 		String output = "";
 
@@ -178,5 +178,5 @@ public class Unit {
 
 		return output;
 	}
-*/
+
 }
