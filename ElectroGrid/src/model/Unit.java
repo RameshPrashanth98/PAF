@@ -58,7 +58,7 @@ public class Unit {
 		return output;
 	}
 
-	/*public String readUnit() {
+	public String readUnit() {
 		String output = "";
 		try {
 			Connection con = connect();
@@ -105,6 +105,7 @@ public class Unit {
 		return output;
 	}
 
+	/*
 	public String updateUnit(String uID, String uAccNo, String uDate, String UnitAmount, String PriceForPerUnit, String Total) {
 		String output = "";
 
