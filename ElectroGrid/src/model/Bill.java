@@ -72,7 +72,7 @@ public class Bill {
 				if(con == null) {
 					return "Error while connecting to the database for inserting. "; 
 				}
-				String query = "insert into bills (bid,uid,	punitread,nunitread	,noofunits,unitprice,totalbill	) values(?,?,?,?,?) ";
+				String query = "insert into bills (bid,uid,	punitread,nunitread	,noofunits,unitprice,totalbill	) values(?,?,?,?,?,?,?) ";
 				PreparedStatement pst = con.prepareStatement(query);
 				
 				pst.setInt(1, 0);

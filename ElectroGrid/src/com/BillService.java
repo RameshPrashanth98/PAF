@@ -39,7 +39,7 @@ Bill bill = new Bill();
 	}
 	
 	@POST
-	@Path("/add")
+	@Path("/")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_PLAIN)
 	public String insertData(@FormParam("UserID") String UserID,
@@ -53,7 +53,7 @@ Bill bill = new Bill();
 	}
 	
 	@PUT
-	@Path("/update")
+	@Path("/")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
 	public String updateBill(String BillData) {
@@ -75,12 +75,12 @@ Bill bill = new Bill();
 	
 	
 	@DELETE
-	@Path("/delete")
+	@Path("/")
 	@Consumes(MediaType.APPLICATION_XML)
 	@Produces(MediaType.TEXT_PLAIN)
 	public String deleteFunds(String billData) {
 		Document doc  =  Jsoup.parse(billData, "", Parser.xmlParser());
-		String BillID = doc.select("bid ").text();
+		String BillID = doc.select("bid").text();
 		String output = bill.deleteBill(BillID);
 		return output;
 	}
