@@ -75,6 +75,7 @@ public class Bill {
 				String query = "insert into bills (bid,uid,	punitread,nunitread	,noofunits,unitprice,totalbill	) values(?,?,?,?,?,?,?) ";
 				PreparedStatement pst = con.prepareStatement(query);
 				
+				
 				pst.setInt(1, 0);
 				pst.setString(2, UserID);
 				pst.setInt(3,Integer.parseInt(PastunitRead));
