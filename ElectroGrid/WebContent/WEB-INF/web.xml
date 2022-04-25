@@ -3,16 +3,26 @@
   <display-name>ElectroGrid</display-name>
   
     	<servlet>
- 		<servlet-name>Jersey Web Application</servlet-name>
+ 		<servlet-name>Jersey Web Application1</servlet-name>
  		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
  		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
- 		<servlet-name>Jersey Web Application</servlet-name>
+ 		<servlet-name>Jersey Web Application1</servlet-name>
  		<url-pattern>/BillService/*</url-pattern>
 	</servlet-mapping>
 	
-	
+	  <servlet>
+    <servlet-name>Jersey Web Application2</servlet-name>
+    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer   
+  		</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Jersey Web Application2</servlet-name>
+    <url-pattern>/Unit/*</url-pattern>
+  </servlet-mapping>
+  
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
