@@ -75,13 +75,13 @@ public class Bill {
 				String query = "insert into bills (bid,uid,	punitread,nunitread	,noofunits,unitprice,totalbill	) values(?,?,?,?,?) ";
 				PreparedStatement pst = con.prepareStatement(query);
 				
-				
-				pst.setString(1, UserID);
-				pst.setInt(2,Integer.parseInt(PastunitRead));
-				pst.setInt(3,Integer.parseInt(NewunitRead));
-				pst.setInt(4,Integer.parseInt(NoofUnits));
-				pst.setInt(5,Integer.parseInt(Unitprice));
-				pst.setDouble(6, Double.parseDouble(Totalbill));
+				pst.setInt(1, 0);
+				pst.setString(2, UserID);
+				pst.setInt(3,Integer.parseInt(PastunitRead));
+				pst.setInt(4,Integer.parseInt(NewunitRead));
+				pst.setInt(5,Integer.parseInt(NoofUnits));
+				pst.setInt(6,Integer.parseInt(Unitprice));
+				pst.setDouble(7, Double.parseDouble(Totalbill));
 				
 				pst.executeUpdate();
 				con.setAutoCommit(false);
@@ -106,7 +106,7 @@ public class Bill {
 					return "Error while connecting to the database for updating.";
 				}
 				
-				String query = "update funds set uid=?, punitread=?, noofunits=?, unitprice=?, totalbill=?"
+				String query = "update bills set uid=?, punitread=?, noofunits=?, unitprice=?, totalbill=?"
 						+ " where bid=?";
 				
 				PreparedStatement pdstmt = con.prepareStatement(query);
@@ -131,6 +131,8 @@ public class Bill {
 			
 			return output;
 		}
+		
+		
 		
 		//Delete bill
 		public String deleteBill(String BillID) {
