@@ -13,7 +13,7 @@ public class CustomerModel {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
-			// Provide the correct details: DBServer/DBName, username, password
+			// Provide the correct details: DBServer/DBName, username, password 
 			con = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/ElectroGridDB?useCustomercode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
 					"root", "");
