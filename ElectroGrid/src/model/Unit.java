@@ -105,7 +105,7 @@ public class Unit {
 		return output;
 	}
 
-	/*
+	
 	public String updateUnit(String uID, String uAccNo, String uDate, String UnitAmount, String PriceForPerUnit, String Total) {
 		String output = "";
 
@@ -144,7 +144,7 @@ public class Unit {
 
 		return output;
 	}
-
+/*
 	public String deleteUnit(String uID) {
 		String output = "";
 
