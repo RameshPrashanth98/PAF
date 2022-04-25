@@ -13,7 +13,7 @@ import model.Unit;
 
 @Path("/Unit")
 public class UnitService {
-	/*
+	
 	Unit UnitObj = new Unit();
 
 	@GET
@@ -71,5 +71,5 @@ public class UnitService {
 	 String uID = doc.select("uID").text();
 	 String output = UnitObj.deleteUnit(uID);
 	return output;
-	}*/
+	}
 }
