@@ -107,7 +107,7 @@ public class Bill {
 					return "Error while connecting to the database for updating.";
 				}
 				
-				String query = "update bills set uid=?, punitread=?, noofunits=?, unitprice=?, totalbill=?"
+				String query = "update bills set uid=?, punitread=?, nunitread=?, noofunits=?, unitprice=?, totalbill=?"
 						+ " where bid=?";
 				
 				PreparedStatement pdstmt = con.prepareStatement(query);
@@ -144,7 +144,7 @@ public class Bill {
 					return "Error while connecting to database for deleting.";
 				}
 				
-				String query = "delete from bills where id=?";
+				String query = "delete from bills where bid=?";
 				
 				PreparedStatement pdstmt = con.prepareStatement(query);
 				
