@@ -122,7 +122,7 @@ public class Payment {
 			return output;
 		}
 		
-	/*	//update payment
+		//update payment
 		
 		public String updatePayment(int accountno, String cname, String uconsumed, String cforunits, String ajustm, String total) {
 			String output = "";
@@ -161,7 +161,7 @@ public class Payment {
 			return output;
 		}
 		
-		// delete payment
+	/*	// delete payment
 		
 		public String deletePayment(String accountNo) {
 			String output = "";
