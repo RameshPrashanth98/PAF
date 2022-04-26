@@ -1,4 +1,4 @@
-/*package com;
+package com;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -85,7 +85,7 @@ public class PaymentService {
 		return output;
 	}
 
-}*/
+}
 
 
 
