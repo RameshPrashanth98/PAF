@@ -161,7 +161,7 @@ public class Payment {
 			return output;
 		}
 		
-	/*	// delete payment
+		// delete payment
 		
 		public String deletePayment(String accountNo) {
 			String output = "";
@@ -192,7 +192,7 @@ public class Payment {
 			}
 
 			return output;
-		}*/
+		}
 		
 		
 }
